@@ -54,6 +54,8 @@
   @media (max-width:640px){.archrow{flex-wrap:wrap}.archrow .old{min-width:0}}
 
   .swapnote{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:13.5px;color:var(--text)}
+  .swapnote.risk{border-left:3px solid #F87171}
+  .swapnote.risk b{color:#FCA5A5}
 
   .finding{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:10px;padding:20px 22px}
   .finding .h{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:9px}
@@ -72,6 +74,22 @@
   .pill.p0{background:rgba(139,107,247,.9);color:#0A0A0C}
   .pill.p1{background:rgba(217,164,65,.14);color:var(--amber);border:1px solid var(--amber)}
   .pill.p2{background:transparent;color:var(--muted);border:1px solid var(--line)}
+
+  .phase{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px 6px;margin-bottom:14px}
+  .phase:last-child{margin-bottom:0}
+  .phase .h{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .phase .h .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+  .phase .h .sub{font-size:13px;color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;font-family:var(--sans)}
+  .phase p{font-size:14px;margin:0 0 14px}
+  .phase .mline:last-of-type{border-bottom:none}
+  .phase.p0{border-left:3px solid var(--purple)}
+  .phase.p0 .tag{color:var(--purple)}
+  .phase.p1{border-left:3px solid var(--amber)}
+  .phase.p1 .tag{color:var(--amber)}
+  .phase.p2{border-left:3px solid var(--muted)}
+  .phase.p2 .tag{color:var(--muted)}
+  .phase .subpush{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;font-weight:700;color:var(--text);margin:20px 0 6px}
+  .phase .subtag{font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:400}
   .ccard p{font-size:13.5px;max-width:none;margin:0}
   .ccard .mono{font-family:var(--mono);font-size:12px;color:var(--text);background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:8px 10px;margin-top:8px}
 
@@ -810,6 +828,44 @@
       </div>
     </div>
       </details>
+
+      <details class="card">
+        <summary><h3>Rollout timeline</h3></summary>
+    <div class="phase p0">
+      <div class="h"><span class="tag">P0</span><span class="sub">Sanity push &amp; structural changes, split into three pushes</span></div>
+      <div class="swapnote risk"><b>Blocked, client end:</b> cabinet pages can ship on 23 Sep (Wed) as planned regardless. For storage-wide to go live the same day, FableRoom's team needs to have the A+ section (Details Carousel) content ready beforehand, otherwise storage-wide slips to whenever it's delivered. This applies across both Push 1 and Push 2 below.</div>
+
+      <div class="subpush">Push 1 &middot; Sanity fixes + top-of-page move<span class="subtag">Live 23 Sep</span></div>
+      <p>Gallery pinch to zoom, key highlights resize, offers toggle default open, Features &amp; Specs tab reorder, and the sticky bar redesign ships now (A/B tested later in P1). Details and Features &amp; Specs move to the top of the page, Product Story removed.</p>
+      <div class="mline"><span>Push live, cabinets</span><span>23 Sep</span></div>
+      <div class="mline"><span>Push live, storage-wide</span><span>Once client copy is ready</span></div>
+      <div class="mline"><span>Observe</span><span>23 to 30 Sep, storage wide</span></div>
+
+      <div class="subpush">Push 2 &middot; Customer Favourites<span class="subtag">After Push 1 observation</span></div>
+      <p>Replaces the old slot, once FableRoom's A+ content is ready.</p>
+      <div class="mline"><span>Push live</span><span>Date TBD, after Push 1 window closes</span></div>
+      <div class="mline"><span>Observe</span><span>3 to 4 days</span></div>
+
+      <div class="subpush">Push 3 &middot; Priced with Honesty repositioned<span class="subtag">Runs separately</span></div>
+      <p>The section itself moves higher up the page, not the info icon, that's a separate P1 build. This runs on its own track rather than waiting on Push 1 or 2, since it's a standalone move. Watching specifically for interaction with the section now that it's reachable without a full scroll.</p>
+      <div class="mline"><span>Push live</span><span>Date TBD</span></div>
+      <div class="mline"><span>Observe</span><span>3 to 4 days</span></div>
+    </div>
+
+    <div class="phase p1">
+      <div class="h"><span class="tag">P1</span><span class="sub">Build, then A/B test, one dedicated week each</span></div>
+      <p>Run one after another. Each starts once the prior test's week has concluded.</p>
+      <div class="mline"><span>Buy box info icon (inline)</span><span>Build &amp; live 1 Oct, test 1 to 7 Oct</span></div>
+      <div class="mline"><span>Reviews modal on rating click</span><span>Test 8 to 14 Oct</span></div>
+      <div class="mline"><span>Sticky add to basket bar</span><span>Test 15 to 21 Oct</span></div>
+      <div class="mline"><span>Tagged thumbnails</span><span>Pending FableRoom scope call, no date yet</span></div>
+    </div>
+
+    <div class="phase p2">
+      <div class="h"><span class="tag">P2</span><span class="sub">Blocked, no test needed</span></div>
+      <p>Pay in 3 ships directly once redesigned, no A/B test, since the current version isn't performing.</p>
+    </div>
+      </details>
     </div>
 
     <h3 style="margin-top:26px">At a glance</h3>
@@ -817,9 +873,9 @@
     <table>
       <thead><tr><th>Status</th><th>Count</th><th>Items</th></tr></thead>
       <tbody>
-        <tr><td class="k">P0 &mdash; sanity push, ship &amp; observe</td><td>8</td><td>Page restructure, gallery zoom, buy box key highlights, buy box offers toggle, sticky add to basket redesign, Features &amp; Specs reorder + delivery merge, Customer Favourites, review ticker</td></tr>
-        <tr><td class="k">P1 &mdash; build, then A/B test</td><td>4</td><td>Buy box info icon (inline), reviews modal on rating click, Bought Together position, tagged thumbnails pilot</td></tr>
-        <tr><td class="k">P2 &mdash; blocked or no action yet</td><td>2</td><td>Pay in 3 (needs redesign first), FAQ (no change)</td></tr>
+        <tr><td class="k">P0: sanity push, ship &amp; observe</td><td>8</td><td>Page restructure, gallery zoom, buy box key highlights, buy box offers toggle, sticky add to basket redesign, Features &amp; Specs reorder + delivery merge, Customer Favourites, review ticker</td></tr>
+        <tr><td class="k">P1: build, then A/B test</td><td>4</td><td>Buy box info icon (inline), reviews modal on rating click, Bought Together position, tagged thumbnails pilot</td></tr>
+        <tr><td class="k">P2: blocked or no action yet</td><td>2</td><td>Pay in 3 (needs redesign first), FAQ (no change)</td></tr>
       </tbody>
     </table>
 
