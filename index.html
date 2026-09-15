@@ -69,6 +69,9 @@
   .pill.ship{background:rgba(139,107,247,.9);color:#0A0A0C}
   .pill.test{background:var(--purple-soft);color:var(--purple);border:1px solid var(--purple)}
   .pill.no{background:transparent;color:var(--muted);border:1px solid var(--line)}
+  .pill.p0{background:rgba(139,107,247,.9);color:#0A0A0C}
+  .pill.p1{background:rgba(217,164,65,.14);color:var(--amber);border:1px solid var(--amber)}
+  .pill.p2{background:transparent;color:var(--muted);border:1px solid var(--line)}
   .ccard p{font-size:13.5px;max-width:none;margin:0}
   .ccard .mono{font-family:var(--mono);font-size:12px;color:var(--text);background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:8px 10px;margin-top:8px}
 
@@ -745,63 +748,64 @@
 
       <details class="card">
         <summary><h3>Component changes</h3></summary>
+    <p><b>P0</b> ships with the restructure and is a sanity push we observe rather than A/B test. <b>P1</b> needs building out first, then runs as its own isolated A/B test once P0 has settled, so its effect isn't masked by the reorder. <b>P2</b> is blocked on a decision or a prerequisite build.</p>
     <div class="compgrid">
       <div class="ccard">
-        <div class="top"><h3>Gallery: pinch to zoom</h3><span class="pill ship">Ship</span></div>
+        <div class="top"><h3>Gallery: pinch to zoom</h3><span class="pill p0">P0</span></div>
         <p>Missing baseline capability, build before rollout.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Gallery: tagged thumbnails</h3><span class="pill no">Pilot, FableRoom decides</span></div>
+        <div class="top"><h3>Gallery: tagged thumbnails</h3><span class="pill p1">P1 &middot; Pilot, FableRoom decides</span></div>
         <p>Small product set first.</p>
         <div class="mono">Front &middot; Open &middot; Detail &middot; In Room</div>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Buy box: key highlights</h3><span class="pill ship">Ship</span></div>
+        <div class="top"><h3>Buy box: key highlights</h3><span class="pill p0">P0</span></div>
         <p>Sizing fix, enlarge for legibility.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Buy box: info icon</h3><span class="pill test">A/B test</span></div>
+        <div class="top"><h3>Buy box: info icon</h3><span class="pill p1">P1 &middot; Build inline, then A/B test</span></div>
         <p>Inline expand of the pricing breakdown vs. current modal. Real trade off between flow and page length.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Buy box: offers toggle</h3><span class="pill ship">Ship</span></div>
+        <div class="top"><h3>Buy box: offers toggle</h3><span class="pill p0">P0</span></div>
         <p>Default open, visitors already expand it.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Buy box: Pay in 3</h3><span class="pill no">Redesign, then test</span></div>
+        <div class="top"><h3>Buy box: Pay in 3</h3><span class="pill p2">P2 &middot; Redesign, then test</span></div>
         <p>No baseline engagement to test against yet.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Sticky Add to Basket bar</h3><span class="pill test">A/B test</span></div>
+        <div class="top"><h3>Sticky Add to Basket bar</h3><span class="pill p0">P0 &middot; Ship redesign, observe</span></div>
         <p>Redesigned version tested against current.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Features &amp; Specs: reorder</h3><span class="pill ship">Ship</span></div>
+        <div class="top"><h3>Features &amp; Specs: reorder</h3><span class="pill p0">P0</span></div>
         <p>Match click demand: Details and Dimensions, Product Description, Key Features, then Care.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Delivery merges into Care</h3><span class="pill ship">Ship</span></div>
+        <div class="top"><h3>Delivery merges into Care</h3><span class="pill p0">P0</span></div>
         <p>One panel, not a new fifth one. Delivery timing leads the merged panel.</p>
         <div class="mono">Care, Delivery &amp; Buying Guide</div>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Customer Favourites</h3><span class="pill no">Sequence after tracking fix</span></div>
+        <div class="top"><h3>Customer Favourites</h3><span class="pill p0">P0 &middot; Sequence after tracking fix</span></div>
         <p>Curated to the sideboard collection, not algorithmic. Highest visibility change here, hold until recommendations tracking is fixed in GA4.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Bought Together</h3><span class="pill test">A/B test</span></div>
+        <div class="top"><h3>Bought Together</h3><span class="pill p1">P1</span></div>
         <p>Kept as a normal, visible section, just repositioned lower. Shopify order data (~1 unit/order) supports deprioritising it.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Reviews: modal on rating click</h3><span class="pill test">A/B test</span></div>
+        <div class="top"><h3>Reviews: modal on rating click</h3><span class="pill p1">P1</span></div>
         <p>Opens reviews in place instead of a full scroll to the bottom.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>Reviews: ticker above fold</h3><span class="pill ship">Ship</span></div>
+        <div class="top"><h3>Reviews: ticker above fold</h3><span class="pill p0">P0</span></div>
         <p>Additive, nothing to compare against.</p>
       </div>
       <div class="ccard">
-        <div class="top"><h3>FAQ</h3><span class="pill no">No change</span></div>
+        <div class="top"><h3>FAQ</h3><span class="pill p2">P2 &middot; No change</span></div>
         <p>Not enough signal yet to restructure.</p>
       </div>
     </div>
@@ -813,15 +817,17 @@
     <table>
       <thead><tr><th>Status</th><th>Count</th><th>Items</th></tr></thead>
       <tbody>
-        <tr><td class="k">Ship directly</td><td>7</td><td>Zoom, key highlights, offers toggle, Features &amp; Specs reorder, delivery merge, review ticker, Priced with Honesty position</td></tr>
-        <tr><td class="k">A/B test</td><td>4</td><td>Info icon, sticky bar, Bought Together position, reviews modal</td></tr>
-        <tr><td class="k">Needs a decision or fix first</td><td>3</td><td>Tagged thumbnails, Pay in 3, Customer Favourites</td></tr>
+        <tr><td class="k">P0 &mdash; sanity push, ship &amp; observe</td><td>8</td><td>Page restructure, gallery zoom, buy box key highlights, buy box offers toggle, sticky add to basket redesign, Features &amp; Specs reorder + delivery merge, Customer Favourites, review ticker</td></tr>
+        <tr><td class="k">P1 &mdash; build, then A/B test</td><td>4</td><td>Buy box info icon (inline), reviews modal on rating click, Bought Together position, tagged thumbnails pilot</td></tr>
+        <tr><td class="k">P2 &mdash; blocked or no action yet</td><td>2</td><td>Pay in 3 (needs redesign first), FAQ (no change)</td></tr>
       </tbody>
     </table>
 
     <div class="tldr">
       <p>The biggest bet is moving Details and Features and Specs to the top of the page. It's also the best supported: measured engagement, sticky nav demand, and the session recording pattern all point the same way.</p>
       <p>Two tracking fixes come off the backlog with this rebuild: Product Story's interaction tracking, and Bought Together's, since neither section still needs it in its new role.</p>
+      <p>On the two review changes: the ticker is additive with nothing to compare against, so it ships in P0 with everything else. The modal is a behaviour change to how reviews are reached, so it's held out as its own P1 test, run after the P0 batch settles, so its effect isn't tangled up with the reorder.</p>
+      <p>Buy box info icon moved from P0 to P1: it needs to be built out as an inline expansion before it can run as an A/B test against the current modal, so it isn't a same-day ship like the rest of P0.</p>
     </div>
   </section>
 </div>
